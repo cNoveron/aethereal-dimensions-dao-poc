@@ -35,12 +35,6 @@ import {
   Avatar,
 } from '@chakra-ui/react';
 
-import { useEvmWalletTokenTransfers } from '@moralisweb3/next';
-import { useSession } from 'next-auth/react';
-import { useEffect } from 'react';
-import { getEllipsisTxt } from 'utils/format';
-import { useNetwork } from 'wagmi';
-import UploadAndDisplayImage from '../upload-image/UploadImage';
 
 const StyledText = ({ label, text }: { [key: string]: any }) => (
   <Box>
@@ -64,7 +58,7 @@ const StyledText = ({ label, text }: { [key: string]: any }) => (
   </Box>
 );
 
-const CollectionVIew = () => {
+const CollectionView = () => {
   const images: any[] = [
     ['Naaia Oru', '/gods/god1.png',
       'The creator of the Vyrma, and the father of all gods.'],
@@ -79,15 +73,8 @@ const CollectionVIew = () => {
     ['Durima', '/gods/god6.png',
       'The god of happiness and wellbeing. His adepts worship his altars to bring good oamens to their parties.'],
   ]
-  const hoverTrColor = useColorModeValue('gray.100', 'gray.700');
-  const { data } = useSession();
-  const { chain } = useNetwork();
-  const { data: transfers } = useEvmWalletTokenTransfers({
-    address: data?.user?.address,
-    chain: chain?.id,
-  });
 
-  useEffect(() => console.log('transfers: ', transfers), [transfers]);
+  const hoverTrColor = useColorModeValue('gray.100', 'gray.700');
 
   return (
     <>
@@ -156,7 +143,7 @@ const CollectionVIew = () => {
                         }}
                         width='100%'
                       >
-                        Buy
+                        Acquire Fragment
                       </Button>
                     </Stack>
                   </CardBody>
@@ -166,29 +153,9 @@ const CollectionVIew = () => {
           </Wrap>
         </Flex>
 
-        <Box>
-          <Flex width='maxWidth'>
-            {images.length !== 0
-              ?
-              <ButtonGroup gap='2' width='100%'>
-                <Button
-                  colorScheme='teal'
-                  onClick={() => {
-
-                  }}
-                  width='100%'
-                >
-                  Launch Game Universe
-                </Button>
-              </ButtonGroup>
-              :
-              <></>
-            }
-          </Flex>
-        </Box>
       </Box>
     </>
   );
 };
 
-export default CollectionVIew;
+export default CollectionView;

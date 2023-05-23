@@ -29,6 +29,28 @@ import {
   Divider,
   Spacer
 } from '@chakra-ui/react';
+// import storeNFT from '../store.mjs's
+
+
+async function storeNFT(image: any, name: any, description: any) {
+  const nft = {
+    image, // use image Blob as `image` field
+    name,
+    description,
+    properties: {
+      type: "3d-concept",
+      // origins: {
+      //   http: "https://blog.nft.storage/posts/2021-11-30-hello-world-nft-storage/",
+      //   ipfs: "ipfs://bafybeieh4gpvatp32iqaacs6xqxqitla4drrkyyzq6dshqqsilkk3fqmti/blog/post/2021-11-30-hello-world-nft-storage/"
+      // },
+      authors: [{ name: "David Choi" }],
+      // content: {
+      //   "text/markdown": "The last year has witnessed the explosion of NFTs onto the world’s mainstage. From fine art to collectibles to music and media, NFTs are quickly demonstrating just how quickly grassroots Web3 communities can grow, and perhaps how much closer we are to mass adoption than we may have previously thought. <... remaining content omitted ...>"
+      // }
+    }
+  }
+}
+
 
 const StyledInput = ({ label, placeholder, children }: { [key: string]: any }) => (
   <Box>
@@ -142,6 +164,7 @@ const StyledSelect = ({ label, options, placeholder }: { [key: string]: any }) =
 const UploadAndDisplayImage = () => {
 
   const [selectedImage, setSelectedImage] = useState([]);
+  const [nftDataArray, setNftDataArray] = useState([]);
 
   const hoverTrColor = useColorModeValue('gray.100', 'gray.700');
   
@@ -266,7 +289,7 @@ const UploadAndDisplayImage = () => {
                           width='100%'>
                           <StyledNumberInput
                             label='Price'
-                            placeholder='yourGitHubUsername' >
+                            placeholder='0.5' >
                             <InputRightAddon
                               color='gray.300'
                               children='ETH' />
@@ -308,11 +331,11 @@ const UploadAndDisplayImage = () => {
                 <Button
                   colorScheme='teal'
                   onClick={() => {
-                      
+                    // storeNFT()
                   }}
                   width='100%'
                 >
-                  Launch Game Universe
+                  Launch Collection
                 </Button>
               </ButtonGroup>
               :
