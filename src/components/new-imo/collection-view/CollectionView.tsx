@@ -60,13 +60,17 @@ const StyledText = ({ label, text }: { [key: string]: any }) => (
 
 const CollectionView = () => {
   const images: any[] = [
-    ['Naaia Oru', '/gods/god1.png',
+    ['Naaia Oru',
+      'https://nftstorage.link/ipfs/bafybeif6v3nan2m5snblscakumty4eqm2a3g37kneuxdkwc4xo4s2yczvq',
       'The creator of the Vyrma, and the father of all gods.'],
-    ['Zhevma Ilur', '/gods/god2.png',
+    ['Zhevma Ilur',
+      'https://nftstorage.link/ipfs/bafkreiepxu6hg3rgkffcdiuuyx7rod6za642g37ygctgputlszjfqnud5e',
       'The giver of wisdom. He has descended into the land of mortals to guide kings and priests into the path of the righteous.'],
-    ['Ivennesh', '/gods/god3.jpg',
+    ['Ivennesh',
+      'https://nftstorage.link/ipfs/bafybeifywvaqth6c643hplcbuc3cdkvsnzk5a7lpvo5sx63ndzvwbtca64',
       'The mother of wrath. She is able to bend the destiny of mortals who look for her.'],
-    ['Ye\'n Ima', '/gods/god4.png',
+    ['Ye\'n Ima',
+      '/gods/god4.png',
       'The godess of the warriors. She carries the souls of fallen warriors into the heavenly realms.'],
     ['Saahani', '/gods/god5.png',
       'The lady of love and compassion. She is the light of peace that prevents the doom of the Vyrma.'],
@@ -104,7 +108,7 @@ const CollectionView = () => {
         <Flex paddingTop='20px'>
           <Wrap>
             {images.length !== 0 && (images.map((image, i: number) =>
-              <WrapItem>
+              <WrapItem key={i}>
                 <Card maxW='lg'>
                   <CardBody>
                     <Box
@@ -138,9 +142,7 @@ const CollectionView = () => {
 
                       <Button
                         colorScheme='teal'
-                        onClick={() => {
-
-                        }}
+                        onClick={() => {}}
                         width='100%'
                       >
                         Acquire Fragment
