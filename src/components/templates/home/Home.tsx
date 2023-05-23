@@ -1,12 +1,17 @@
 import { CheckCircleIcon, SettingsIcon } from '@chakra-ui/icons';
-import { Heading, VStack, List, ListIcon, ListItem } from '@chakra-ui/react';
+import { Heading, VStack, List, ListIcon, ListItem, Text } from '@chakra-ui/react';
 
 const Home = () => {
   return (
     <VStack w={'full'}>
       <Heading size="md" marginBottom={6}>
-        Ethereum Boilerplate
+        Aethereal Dimensions
       </Heading>
+      <div>
+        <Text>
+          Whether you are a curator, an artist, a collector, a writer or a cinematic franchise owner you care about your artistic concept. Creative DAOs allow you to govern a treasury and decision making to protect and grow your artistic concept or web3 game world.
+        </Text>
+      </div>
       <List spacing={3}>
         <ListItem>
           <ListIcon as={CheckCircleIcon} color="green.500" />
