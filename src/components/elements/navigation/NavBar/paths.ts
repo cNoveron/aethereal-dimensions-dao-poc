@@ -8,13 +8,19 @@ const NAV_LINKS: ISubNav[] = [
   },
   {
     label: 'Collections',
-    href: '/imo',
+    href: '/collections',
     children: [
       {
         label: 'Launch Genesis Collection',
         subLabel: 'Deploy an Initial Metaverse Offering of NFTs with DAO rights',
-        href: '/imo/new-imo',
+        href: '/collections/new-imo',
         logo: 'token',
+      },
+      {
+        label: 'NFT',
+        subLabel: 'Get your ERC721 an ERC1155 transfers',
+        href: '/collections/collection-page',
+        logo: 'lazyNft',
       },
     ],
   },
