@@ -32,8 +32,8 @@ const CreateProject = () => {
 
   return (
     <>
-      <Heading size="lg" marginBottom={6}>
-        Create Project
+      <Heading size="xl" marginBottom={6}>
+        Create Game World
       </Heading>
       <UploadAndDisplayImage />
     </>

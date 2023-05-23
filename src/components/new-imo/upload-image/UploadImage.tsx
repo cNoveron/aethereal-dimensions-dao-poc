@@ -26,7 +26,8 @@ import {
   ButtonGroup,
   NumberInput,
   NumberInputField,
-  NumberIncrementStepper,
+  Divider,
+  Spacer
 } from '@chakra-ui/react';
 
 const StyledInput = ({ label, placeholder, children }: { [key: string]: any }) => (
@@ -147,19 +148,49 @@ const UploadAndDisplayImage = () => {
   return (
       <Box border="2px" borderColor={hoverTrColor} borderRadius="xl" padding="24px 18px">
         <TableContainer w={'full'}>
-          <h1>Upload and Display Image usign React Hook's</h1>
-          <div>
-
-            <input
-              type="file"
-              multiple
-              name="myImage"
-              onChange={(event: any) => {
-                console.log(event.target.files);
-                setSelectedImage(event.target.files);
+          <Stack spacing={5}>
+            <Heading size='md'>Launch the Genesis Collection of your game universe.
+            </Heading>
+            <Text
+              style={{
+                wordWrap: 'break-word',
+                whiteSpace: 'pre-wrap'
               }}
-            />
-          </div>
+              >
+              Choose the images to mint NFTs of the first collection of your game world and provide a detailed description of the benefits that . Then select Launch Genesis Collection. This will mint the NFT collection and setup their prices on our marketplace so web3 gamers can acquire them and enjoy the perks of being the first to owners of an Aethereal Genesis Collection:
+            </Text>
+            <Text>
+              1) Be the first to get them and use them inside your game world.
+            </Text>
+            <Text>
+              2) Get a say in your Council of Curators of your Aethereal Genesis Collection, the DAO that governs the artistic concept of your game.
+            </Text>
+            <Text>
+              3) Enjoy a share of the royalties for each NFT transfer.
+            </Text>
+            <Text>
+              4) Earn rewards when developers effectively integrate the assets into your game world.
+            </Text>
+            <Stack
+              spacing={5}
+              width='100%'
+              flex='1'
+            >
+              <Heading size='md'>Choose your files:
+              </Heading>
+              <input
+                type="file"
+                multiple
+                name="myImage"
+                onChange={(event: any) => {
+                  console.log(event.target.files);
+                  setSelectedImage(event.target.files);
+                }}
+              />
+            </Stack>
+            <Spacer/>
+            <Divider/>
+          </Stack>
           <Table size='sm'>
             <Thead>
               <Tr>
@@ -281,7 +312,7 @@ const UploadAndDisplayImage = () => {
                   }}
                   width='100%'
                 >
-                  Launch IMO
+                  Launch Game Universe
                 </Button>
               </ButtonGroup>
               :
