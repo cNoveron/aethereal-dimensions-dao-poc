@@ -17,8 +17,8 @@ const NAV_LINKS: ISubNav[] = [
         logo: 'token',
       },
       {
-        label: 'NFT',
-        subLabel: 'Get your ERC721 an ERC1155 transfers',
+        label: 'Explore Collections',
+        subLabel: 'Find valuable Collections to invest on',
         href: '/collections/collection-page',
         logo: 'lazyNft',
       },
